@@ -1,0 +1,49 @@
+---
+export interface HeaderProps {
+  title: string;
+}
+
+const { title = 'ASTRO' } = Astro.props;
+---
+
+<header class='header'>
+  <h2>{title}</h2>
+  <nav class='header__nav'>
+    <ul class='header__nav__list' role='list'>
+      <li><a href='#'>Home</a></li>
+      <li><a href='#'>About</a></li>
+      <li><a href='#'>Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__nav__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .header__nav__list li a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .header__nav__list li a:hover {
+    color: rgb(95, 93, 93);
+    text-decoration: underline;
+  }
+</style>
